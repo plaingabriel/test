@@ -1,0 +1,13 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Greet } from "../components/Greet";
+---
+
+<Layout title="Home">
+  <section class="flex flex-col items-center gap-y-5">
+    <h1>Home Page</h1>
+    <h2>My awesome blog subtitle</h2>
+
+    <Greet client:visible />
+  </section>
+</Layout>

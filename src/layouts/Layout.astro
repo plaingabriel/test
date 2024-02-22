@@ -1,0 +1,45 @@
+---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+import NavBar from "../components/NavBar.astro";
+import SocialLink from "../components/SocialLink.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="flex flex-col items-center h-screen p-10 bg-background">
+    <header>
+      <NavBar />
+    </header>
+    <main class="w-[350px] sm:w-[600px] p-5">
+      <slot />
+    </main>
+
+    <footer class="p-10">
+      <section class="flex justify-center gap-x-4">
+        <SocialLink href="https://twitter.com/astrodotbuild" link="Twitter" />
+
+        <SocialLink href="https://github.com/withastro" link="GitHub" />
+
+        <SocialLink
+          href="https://www.youtube.com/astrodotbuild"
+          link="YouTube"
+        />
+      </section>
+    </footer>
+  </body>
+</html>
